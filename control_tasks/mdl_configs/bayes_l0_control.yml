@@ -12,13 +12,13 @@ dataset:
      - extra_info
      - embeddings
   corpus:
-    root: ./control_tasks_data/    # CHANGE THIS: path to the folder with ptb3-wsj-*.conllx files
+    root: ./prob_mdl/description-length-probing/control_tasks/control_tasks_data/    # CHANGE THIS: path to the folder with ptb3-wsj-*.conllx files
     train_path: ptb3-wsj-train.conllx
     dev_path: ptb3-wsj-dev.conllx
     test_path: ptb3-wsj-test.conllx
   embeddings:
     type: token
-    root: ./control_tasks_data/    # CHANGE THIS: path to the folder with raw*..elmo-layers.hdf5 files
+    root: ./prob_mdl/description-length-probing/control_tasks/control_tasks_data/    # CHANGE THIS: path to the folder with raw*..elmo-layers.hdf5 files
     train_path: raw.train.elmo-layers.hdf5
     dev_path: raw.dev.elmo-layers.hdf5
     test_path: raw.test.elmo-layers.hdf5
@@ -55,7 +55,7 @@ probe_training:
   wait_without_improvement_for: 200
 reporting:
   fixed_directory: bayes_l0_control   # CHANGE THIS: output dir with ckpts and logs
-  root: .
+  root: ./prob_mdl/description-length-probing/control_tasks/
   observation_paths:
     train_path: train.observations
     dev_path: dev.observations
