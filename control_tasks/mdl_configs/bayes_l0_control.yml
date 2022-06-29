@@ -12,13 +12,13 @@ dataset:
      - extra_info
      - embeddings
   corpus:
-    root: ..        # CHANGE THIS: path to the folder with ptb3-wsj-*.conllx files
+    root: ./control_tasks_data/    # CHANGE THIS: path to the folder with ptb3-wsj-*.conllx files
     train_path: ptb3-wsj-train.conllx
     dev_path: ptb3-wsj-dev.conllx
     test_path: ptb3-wsj-test.conllx
   embeddings:
-    type: token 
-    root: ..        # CHANGE THIS: path to the folder with raw*..elmo-layers.hdf5 files
+    type: token
+    root: ./control_tasks_data/    # CHANGE THIS: path to the folder with raw*..elmo-layers.hdf5 files
     train_path: raw.train.elmo-layers.hdf5
     dev_path: raw.dev.elmo-layers.hdf5
     test_path: raw.test.elmo-layers.hdf5
@@ -26,14 +26,14 @@ dataset:
   dataset_size: 40000
 model:
   hidden_dim: 1024 # ELMo hidden dim
-  model_type: ELMo-disk 
+  model_type: ELMo-disk
   use_disk: True
   model_layer: 0 # ELMo: {0, 1, 2}  # CHANGE THIS: insert your layer
 regimen:
-  type: bayes 
+  type: bayes
 probe:
-  task_signature: word_label 
-  type: bayes 
+  task_signature: word_label
+  type: bayes
   task_name: corrupted-part-of-speech
   maximum_rank: 1000                # CHANGE THIS (IF YOU REALLY WANT)
   psd_parameters: True
@@ -69,9 +69,3 @@ reporting:
     - bayes_masks
     - placeholder
   report_ckpt: True
-
-
-
-
-
-
