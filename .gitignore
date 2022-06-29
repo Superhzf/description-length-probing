@@ -17,3 +17,5 @@ dist/
 *.egg
 pip-wheel-metadata/
 *.tar
+*.hdf5
+*.conllx
